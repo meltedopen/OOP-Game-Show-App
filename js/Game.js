@@ -1,9 +1,3 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Game.js */
-
-// Game.js to create a Game class methods for starting and ending the game, handlinginteractions, getting a random phrase, checking for a win, and removing a life from the scoreboard.
-
 class Game {
   constructor() {
     this.missed = 0;
@@ -11,10 +5,7 @@ class Game {
     this.activePhrase = null;
   }
 
-  /**
-   * Creates phrases for use in game
-   * @return {array} An array of phrases that could be used in the game
-   */
+  // Game phrases
   createPhrases() {
     const phrases = [];
     const phraseStrings = [
@@ -38,10 +29,7 @@ class Game {
     return phrases;
   }
 
-  /**
-   * Selects random phrase from phrases property
-   * @return {Object} Phrase object chosen to be used
-   */
+  // Selects random phrase
   getRandomPhrase() {
     return this.phrases[Math.floor(Math.random() * 10)];
   }
@@ -80,7 +68,7 @@ class Game {
     const gameEndMessage = document.getElementById('game-over-message');
     const gameEndOverlay = document.getElementById('overlay');
     if (gameWon) {
-      gameEndMessage.textContent = 'Good Job, You Won!';
+      gameEndMessage.textContent = 'Good Work, You Won!';
       gameEndOverlay.classList.replace('start', 'win');
     } else {
       gameEndMessage.textContent = 'You Lost... Beter Luck Next Time!';
@@ -99,6 +87,9 @@ class Game {
     }
   }
 
+  // Disable selected letter's onscreen keyboard button
+  // If phrase dosent include guessed letter , add wrong (CSS class)
+  // If phrase includes the right letter, add correct (CSS class)
   handleInteraction(keyButton) {
     const keys = document.getElementsByClassName('key');
     for (let key of keys) {

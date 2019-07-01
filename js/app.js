@@ -1,8 +1,3 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * app.js */
-
-// app.js to create a new instance of the `Game` class and add event listeners for the start button and onscreen keyboard buttons.
 let game;
 
 // Event listener for start game
@@ -34,13 +29,13 @@ function resetGame(game) {
       key.classList.remove('chosen', 'wrong');
     }
 
-    //Reset all of the heart images
+    //Resets heart images
     const imgs = document.getElementsByTagName('img');
     for (let img of imgs) {
       img.setAttribute('src', 'images/liveHeart.png');
     }
 
-    //Reset overlay Element class to start
+    //Resets overlay Element
     document.getElementById('overlay').className = 'start';
   }
 }
